@@ -1,0 +1,109 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Media boletim NSL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button#calcular {
+            background: #4CAF50;
+            color: white;
+        }
+
+        button#zerar {
+            background: #f44336;
+            color: white;
+        }
+
+        .resultado {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--link para o meu instagram-->
+
+    <imput type="button" value="meu insta">
+        </a>
+        <div class="container">
+            <h2>Calculo da media recuperação 1°ano</h2>
+
+
+            <input type="number" id="NR" placeholder="Nota recuperação" step="0.1">
+            <input type="number" id="aql1" placeholder="AQL 1" step="0.1">
+            <input type="number" id="aql2" placeholder="AQL 2" step="0.1">
+            <input type="number" id="aql3" placeholder="AQL 3" step="0.1">
+            <input type="number" id="aql4" placeholder="AQL 4" step="0.1">
+
+
+
+            <button id="calcular">Calcular Média</button>
+            <button id="zerar">Zerar</button>
+
+            <div class="resultado" id="resultado"></div>
+            <a href="MediaGeral.HTML">voltar</a>
+        </div>
+        <script>
+            const calcularBtn = document.getElementById('calcular');
+            const zerarBtn = document.getElementById('zerar');
+            const resultadoDiv = document.getElementById('resultado');
+
+            calcularBtn.addEventListener('click', () => {
+
+                let notaRecu = Number(document.getElementById('NR').value);
+                let aql11 = Number(document.getElementById('aql1').value);
+                let aql22 = Number(document.getElementById('aql2').value);
+                let aql33 = Number(document.getElementById('aql3').value);
+                let aql44 = Number(document.getElementById('aql4').value);
+
+                '1'
+                if ([notaRecu, aql1, aql2, aql3, aql4].some(isNaN)) {
+                    resultadoDiv.textContent = "Preencha todas as notas corretamente!";
+                    return;
+                }
+                let resultado = notaRecu * 0.7 + ((aql11 + aql22 + aql33 + aql44) / 4) * 0.3
+                resultadoDiv.textContent = `Sua média é: ${resultado}`;
+            });
+
+            zerarBtn.addEventListener('click', () => {
+                document.querySelectorAll('input').forEach(input => input.value = '');
+                resultadoDiv.textContent = '';
+            });
+        </script>
+
+</body>
+
+</html>
